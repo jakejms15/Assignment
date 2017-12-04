@@ -12,10 +12,10 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+       
+    }
 
-    public void LoadNextScene()
+    public static void LoadNextScene()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene + 1);
@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour {
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
-
+    
+       
 
 }
