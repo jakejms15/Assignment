@@ -15,6 +15,12 @@ public class LevelManager : MonoBehaviour {
        
     }
 
+    public void loadNext()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene + 1);
+    }
+
     public static void LoadNextScene()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
@@ -25,7 +31,10 @@ public class LevelManager : MonoBehaviour {
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
-    
-       
+
+    public void LoadFirstScene()
+    {
+        SceneManager.LoadScene("Start");
+    }
 
 }

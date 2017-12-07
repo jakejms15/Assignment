@@ -18,7 +18,10 @@ public class BallScript : MonoBehaviour
     int player2SCORE;
     public Text Player2Score;
     public int finalScore;
+    public static int player1FinalScore = 0;
+    public static int player2FinalScore = 0;
 
+    public int ballSpeed;
     private Vector3 spawn;
     // Use this for initialization
     void Start()
@@ -46,17 +49,24 @@ public class BallScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && hasStarted == false)
         {
             hasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * 12;
+            GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * ballSpeed;
         }
     }
 
-
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 addspeed = new Vector2(0f, 0.2f);
         if (hasStarted && (collision.collider.tag == "Border" || collision.collider.tag == "Obstacle"))
         {
             gameObject.GetComponent<AudioSource>().Play();
+        }
+        
+
+        if (hasStarted && (collision.collider.tag == "Border"))
+        {
+            this.GetComponent<Rigidbody2D>().velocity += addspeed;
         }
 
         if (collision.gameObject.name == "Player1PostBorder")
@@ -64,15 +74,10 @@ public class BallScript : MonoBehaviour
             player2SCORE = player2SCORE + 1;
             if (player2SCORE == finalScore)
             {
+                player2FinalScore += 1;
                 LevelManager.LoadNextScene();
 
             }
-            else if (player2SCORE == finalScore)
-            {
-                LevelManager.LoadNextScene();
-
-            }
-
             Player2Score.text = player2SCORE.ToString();
             transform.position = spawn;
             hasStarted = false;
@@ -89,15 +94,11 @@ public class BallScript : MonoBehaviour
             player1SCORE = player1SCORE + 1;
             if (player1SCORE == finalScore)
             {
+                player1FinalScore += 1;
                 LevelManager.LoadNextScene();
     
             }
-
-            else if (player1SCORE == finalScore)
-            {
-                LevelManager.LoadNextScene();
-
-            }
+            
             Player1Score.text = player1SCORE.ToString();
             transform.position = spawn;
             hasStarted = false;

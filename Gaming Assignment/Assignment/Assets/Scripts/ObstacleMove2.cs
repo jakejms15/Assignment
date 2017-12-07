@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclesMove : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class ObstacleMove2 : MonoBehaviour {
+
+    void Start()
+    {
+
+    }
 
     // Update is called once per frame
-    int direction = 1; //int direction where 0 is stay, 1 up, -1 down
+    int direction = -1; //int direction where 0 is stay, 1 up, -1 down
     int top = 5;
     int bottom = -5;
 
@@ -27,3 +28,4 @@ public class ObstaclesMove : MonoBehaviour {
         this.transform.Translate(0, speed * direction * Time.deltaTime, 0);
     }
 }
+

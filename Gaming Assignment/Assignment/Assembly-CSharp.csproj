@@ -48,11 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BallScript.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\ObstacleMove2.cs" />
      <Compile Include="Assets\Scripts\ObstaclesMove.cs" />
      <Compile Include="Assets\Scripts\PlayerOneScript.cs" />
      <Compile Include="Assets\Scripts\PlayerTwoScript.cs" />
+     <Compile Include="Assets\Scripts\ScoreScript.cs" />
+     <Compile Include="Assets\Scripts\WhoWon.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Lenovo/Documents/Gaming Assignment/Assignment/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>D:/4.2C/Intro To Gaming/Gaming Assignment/Assignment/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
